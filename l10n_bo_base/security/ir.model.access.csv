@@ -1,0 +1,8 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_catalogs_sunat_base,catalogs.sunat,l10n_bo_base.model_catalogs_sunat,base.group_user,1,0,0,0
+access_sunat_table,sunat.table,l10n_bo_base.model_sunat_table,base.group_user,1,0,0,0
+access_type_affectation,type.affectation.table,l10n_bo_base.model_type_affectation,base.group_user,1,0,0,0
+
+access_catalogs_sunat_account,catalogs.sunat,l10n_bo_base.model_catalogs_sunat,account.group_account_invoice,1,1,1,1
+access_sunat_table,sunat.table,l10n_bo_base.model_sunat_table,account.group_account_invoice,1,1,1,1
+access_type_affectation,type.affectation,l10n_bo_base.model_type_affectation,account.group_account_invoice,1,1,1,1

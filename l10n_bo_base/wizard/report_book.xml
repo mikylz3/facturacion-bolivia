@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+   <data>
+
+       <record id="view_report_book_form" model="ir.ui.view">
+                <field name="name">Report Book</field>
+                <field name="model">report.account</field>
+                <field name="arch" type="xml" >
+             <form>
+                 <group>
+                     <group>
+                        <field name="initial_date" />
+                     </group>
+                     <group>
+                        <field name="final_date" />
+                     </group>
+                 </group>
+                 <group>
+                     <field name="journal_ids" />
+                 </group>
+                 <group>
+                     <button name="generate_report_xlsx"  string="Generar Reporte Excel" type="object" />
+                 </group>
+              </form>
+                </field>
+       </record>
+
+       <record id="view_report_book_excel" model="ir.ui.view">
+		<field name="name">Report Book</field>
+		<field name="model">report.account.excel</field>
+		<field name="arch" type="xml">
+			<form string="Reporte de ventas">
+				<group>
+					<field name="file_name" filename="excel_data" />
+					<field name="excel_data" invisible="1" />
+
+				</group>
+				<footer>
+					<button string="Cancel" class="btn-primary" special="cancel"/>
+				</footer>
+			</form>
+		</field>
+       </record>
+
+       <record id="action_report_book_wizard" model="ir.actions.act_window">
+            <field name="name">Report Book</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">report.account</field>
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_report_book_form"/>
+            <field name="target">new</field>
+        </record>
+<!---->
+       <menuitem id="m_report_book" name="Report Book"  action="action_report_book_wizard"  parent="l10n_bo_base.root_catalogs_sunat_id" sequence="4" />
+   </data>
+
+</odoo>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id='type_affectation_form' model='ir.ui.view'>
+            <field name="name">Type Affectation</field>
+            <field name="model">type.affectation</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="2" colspan="2">
+                             <group>
+                                <field name="code"/>
+                                <field name="name"/>
+                            </group>
+                            <group>
+                                <field name="type"></field>
+                                <field name="visible"></field>
+                            </group>
+                        </group>
+
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id='type_affectation_tree' model='ir.ui.view'>
+            <field name="name">Type Affectation</field>
+            <field name="model">type.affectation</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="code"></field>
+                    <field name="name"></field>
+                    <field name="type"></field>
+                    <field name="visible"></field>
+                </tree>
+            </field>
+        </record>
+
+        <record id="type_affectation_action" model="ir.actions.act_window">
+                    <field name="name">Type Affectation</field>
+                    <field name="res_model">type.affectation</field>
+                    <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem action="type_affectation_action" id="type_affectation_id" parent="l10n_bo_base.root_catalogs_sunat_id" />
+
+    </data>
+</odoo>

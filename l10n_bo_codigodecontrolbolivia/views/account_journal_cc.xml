@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record model="ir.ui.view" id="account_journal_codigocontrol_form_view">
+        <field name="name">journal.codigocontrol</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+                <xpath expr="//page[@name='bank_account']" position="after">
+                    <page name="loc_bol" string="Localización Boliviana">
+                        <group>
+                            <group string="Configuración de Dosificación">
+                                <field name="type_document_id"/>
+                                <field name="authorization_number"/>
+                                <field name="date_limit_emision"/>
+                                <field name="key_dosing"/>
+                                <field name="legend_1"/>
+                                <field name="legend_2"/>
+                            </group>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+    </record>
+</odoo>

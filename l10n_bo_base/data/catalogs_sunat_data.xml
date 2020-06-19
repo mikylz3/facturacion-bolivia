@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="True">
+        <record id="contry_state_bol_1" model="res.country.state">
+            <field name="name">Cochabamba</field>
+            <field name="code">CB</field>
+            <field name="country_id">1</field>
+        </record>
+        <record id="contry_state_bol_2" model="res.country.state">
+            <field name="name">OR</field>
+            <field name="code">OR</field>
+            <field name="country_id">1</field>
+        </record>
+
+
+
+
+        <record id="catalogs_sunat_3" model="catalogs.sunat">
+            <field name="name">PA</field>
+            <field name="code">PA</field>
+            <field name="type_catalog">1</field>
+        </record>
+        <record id="catalogs_sunat_4" model="catalogs.sunat">
+            <field name="name">LP</field>
+            <field name="code">LP</field>
+            <field name="type_catalog">1</field>
+        </record>
+        <record id="catalogs_sunat_5" model="catalogs.sunat">
+            <field name="name">TJ</field>
+            <field name="code">TJ</field>
+            <field name="type_catalog">1</field>
+        </record>
+        <record id="catalogs_sunat_6" model="catalogs.sunat">
+            <field name="name">PO</field>
+            <field name="code">PO</field>
+            <field name="type_catalog">1</field>
+        </record>
+        <record id="catalogs_sunat_7" model="catalogs.sunat">
+            <field name="name">SC</field>
+            <field name="code">SC</field>
+            <field name="type_catalog">1</field>
+        </record>
+        <record id="catalogs_sunat_8" model="catalogs.sunat">
+            <field name="name">BE</field>
+            <field name="code">BE</field>
+            <field name="type_catalog">1</field>
+        </record>
+        <record id="catalogs_sunat_9" model="catalogs.sunat">
+            <field name="name">CH</field>
+            <field name="code">CH</field>
+            <field name="type_catalog">1</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="table_sunat_search" model="ir.ui.view">
+            <field name="name">Search table SUNAT</field>
+            <field name="model">sunat.table</field>
+            <field name="arch" type="xml">
+                <search string="Search table">
+                    <field name="name" string="Name" filter_domain="[('name','ilike',self)]"/>
+                    <separator/>
+                    <group expand="0" string="Group by">
+                        <filter name="group_by_type" string="Catalog" context="{'group_by':'table_type'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="table_sunat_form" model="ir.ui.view">
+            <field name="name">sunat.table.form</field>
+            <field name="model">sunat.table</field>
+            <field name="arch" type="xml">
+                <form string="Catalog SUNAT">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code"/>
+                            </group>
+                            <group>
+                                <field name="name"/>
+                                <field name="table_type"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="table_sunat_tree" model="ir.ui.view">
+            <field name="name">sunat.table.tree</field>
+            <field name="model">sunat.table</field>
+            <field name="arch" type="xml">
+                <tree string="Catalog SUNAT">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="table_type"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="table_sunat_action" model="ir.actions.act_window">
+            <field name="name">TABLE </field>
+            <field name="res_model">sunat.table</field>
+            <field name="context">{'search_default_group_by_type':1}</field>
+            <field name="search_view_id" ref="table_sunat_search"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a table SUNAT
+                </p>
+                <p>
+                    table SUNAT
+                </p>
+            </field>
+        </record>
+
+        <menuitem action="table_sunat_action" id="table_sunat_id" parent="l10n_bo_base.root_catalogs_sunat_id" />
+
+    </data>
+</odoo>

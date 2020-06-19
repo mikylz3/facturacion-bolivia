@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="catalogs_sunat_search" model="ir.ui.view">
+            <field name="name">Search catalogs SUNAT</field>
+            <field name="model">catalogs.sunat</field>
+            <field name="arch" type="xml">
+                <search string="Search catalogs">
+                    <field name="name" string="Name" filter_domain="[('name','ilike',self)]"/>
+                    <separator/>
+                    <group expand="0" string="Group by">
+                        <filter name="group_by_type" string="Catalog" context="{'group_by':'type_catalog'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record id="catalogs_sunat_form" model="ir.ui.view">
+            <field name="name">catalogs.sunat.form</field>
+            <field name="model">catalogs.sunat</field>
+            <field name="arch" type="xml">
+                <form string="Catalog SUNAT">
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="code"/>
+                            </group>
+                            <group>
+                                <field name="name"/>
+                                <field name="type_catalog"/>
+                                <field name="is_usually"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="catalogs_sunat_tree" model="ir.ui.view">
+            <field name="name">catalogs.sunat.tree</field>
+            <field name="model">catalogs.sunat</field>
+            <field name="arch" type="xml">
+                <tree string="Catalog SUNAT">
+                    <field name="code"/>
+                    <field name="name"/>
+                    <field name="type_catalog"/>
+                    <field name="is_usually"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="catalogs_sunat_action" model="ir.actions.act_window">
+            <field name="name">Catalogs SUNAT</field>
+            <field name="res_model">catalogs.sunat</field>
+<!--            <field name="view_type">form</field>-->
+            <field name="context">{'search_default_group_by_type':1}</field>
+            <field name="search_view_id" ref="catalogs_sunat_search"/>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a catalog SUNAT
+                </p>
+                <p>
+                    Catalogs SUNAT
+                </p>
+            </field>
+        </record>
+
+        <menuitem name="Catalogs" id="root_catalogs_sunat_id" parent="account.menu_finance_configuration"/>
+        <menuitem action="catalogs_sunat_action" id="catalogs_sunat_id" parent="root_catalogs_sunat_id"/>
+
+    </data>
+</odoo>

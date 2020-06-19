@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+            id="report_factura_computarizada_hoja_carta"
+            string="Factura Boliviana"
+            model="account.move"
+            report_type="qweb-pdf"
+            file="l10n_bo_account.factura_computarizada_hoja_carta"
+            name="l10n_bo_account.factura_computarizada_hoja_carta"
+            groups="account.group_account_invoice"
+        />
+    </data>
+</odoo>
